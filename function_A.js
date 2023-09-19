@@ -8,3 +8,8 @@ const click = (item) => {
 const skileQ = () => {
   return alert("q");
 };
+
+// W 스킬 추가
+const skileW = () => {
+  return alert("w");
+};
