@@ -1,4 +1,5 @@
 // 클릭추가
-const click = () => {
+const click = (item) => {
+  if (item) return console.log("아이템이 클릭되었습니다.");
   return console.log("클릭되었습니다.");
 };
