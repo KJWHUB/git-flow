@@ -4,8 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git Branch solution</title>
+
+    <!-- product css -->
+    <link rel="stylesheet" href="product/index.css" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+    </style>
   </head>
   <body>
-    <div>reset</div>
+    <div id="app">
+      <header>reset</header>
+      <div id="product"></div>
+    </div>
   </body>
 </html>
+
+<script type="module">
+  import Product from "./product/index.js";
+
+  const createApp = () => {
+    console.log("%cApp Load", "color: blue; font-weight: bold;");
+
+    const product = new Product({ elementId: "product" });
+    product.setup();
+  };
+
+  createApp();
+</script>
