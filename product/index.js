@@ -8,6 +8,26 @@ function Product({ elementId }) {
     };
   };
 
+  const createProductElement = (product) => {
+    const element = document.createElement("div");
+    element.innerHTML = `
+      <div class="product-card">
+        <h3>${product.name}</h3>
+        <p>${product.price}</p>
+      </div>
+    `;
+    return element;
+  };
+
+  const render = () => {
+    const element = document.getElementById(elementId);
+    element.innerHTML = "";
+    list.forEach((product) => {
+      const productElement = createProductElement(product);
+      element.appendChild(productElement);
+    });
+  };
+
   const add = (product) => {
     list.push(product);
   };
@@ -32,6 +52,9 @@ function Product({ elementId }) {
       });
 
       console.log("Product List:", list);
+
+      render();
+      console.log("Product Rendered");
     } catch (error) {
       console.error("Product Setup Fail:", error);
     }

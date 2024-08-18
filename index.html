@@ -6,17 +6,21 @@
     <title>Git Branch solution</title>
   </head>
   <body>
-    <div>reset</div>
+    <div id="app">
+      <header>reset</header>
+      <div id="product"></div>
+    </div>
   </body>
 </html>
 
 <script type="module">
   import Product from "./product/index.js";
+
   const createApp = () => {
     console.log("%cApp Load", "color: blue; font-weight: bold;");
 
     const product = new Product({ elementId: "product" });
-    console.log(product);
+    product.setup();
   };
 
   createApp();
