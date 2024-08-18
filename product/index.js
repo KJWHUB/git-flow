@@ -43,4 +43,4 @@ function Product({ elementId }) {
   };
 }
 
-return Product;
+export default Product;
