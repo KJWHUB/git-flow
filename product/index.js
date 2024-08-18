@@ -1,6 +1,13 @@
 function Product({ elementId }) {
   const list = [];
 
+  const add = (product) => {
+    list.push(product);
+  };
+  const remove = (product) => {
+    list.splice(list.indexOf(product), 1);
+  };
+
   const createProduct = (name, price) => {
     return {
       name,
@@ -26,13 +33,6 @@ function Product({ elementId }) {
       const productElement = createProductElement(product);
       element.appendChild(productElement);
     });
-  };
-
-  const add = (product) => {
-    list.push(product);
-  };
-  const remove = (product) => {
-    list.splice(list.indexOf(product), 1);
   };
 
   const setup = () => {
